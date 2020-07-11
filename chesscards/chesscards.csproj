@@ -21,4 +21,8 @@
     <Folder Include="wwwroot\images\pieces\alpha\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\chesslibcs\chesslibcs.csproj" />
+  </ItemGroup>
+
 </Project>
