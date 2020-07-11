@@ -1,16 +1,17 @@
-﻿function testParseBoardState() {
-    let gameStateData = {
-        "boardState": {
-            "pieces": "BBBB...................................................."
-        }
-    }
-    parseBoardState(gameStateData)
+﻿declare var sendPlayMoveCommand;
+
+function testParseBoardState() {
+    sendPlayMoveCommand("e2e4")
+}
+
+function applyGameState(gameStateData: any) {
+    currentBoardState = parseBoardState(gameStateData)
+    drawBoard(currentBoardState)
 }
 
 function parseBoardState(gameStateData: any): BoardState {
     let parsedBoardState = new BoardState()
     parsedBoardState.pieces = parseBoardPieces(gameStateData.boardState.pieces)
-    alert(parsedBoardState.pieces.length)
     return parsedBoardState
 }
 
